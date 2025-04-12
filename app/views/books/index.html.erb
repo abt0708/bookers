@@ -1,13 +1,16 @@
-<h1>Books/h1>
+<h1>Books</h1>
 <table>
-<% @books.each do |book| %>
-
-  <th><tr>Title</tr></th>
-  <span><%= book.title %></span>
-
-  <th><tr>Body</tr></th>
-  <span><%= book.body %></span>
-  
-
+  <tr>
+    <th>Title</th>
+    <th>Body</th>
+  </tr>
+  <% @books.each do |book| %>
+    <tr>
+      <td><span><%= book.title %></span></td>
+      <td><span><%= book.body %></span></td>
+      <td><%= link_to "show", "/books/show" %></td>
+      <td><%= link_to "Edit", "/books/edit" %></td>
+      <td><%= link_to "Destroy", "/books/destroy" %></td>
+    </tr>
+  <% end %>
 </table>
-<% end %>
